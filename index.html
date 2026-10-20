@@ -4266,7 +4266,7 @@ self.addEventListener(&#x27;fetch&#x27;,function(e){
     <button class="cv-mini" id="cv-plus" aria-label="附件"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
     <textarea id="cv-ta" rows="1" placeholder="输入消息…"></textarea>
     <button class="cv-mini" id="cv-mic" aria-label="语音消息"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
-    <button class="send-btn" id="cv-send"><svg viewBox="0 0 24 24"><path d="M4 12h13M13 6l6 6-6 6"/></svg></button>
+    <button class="send-btn" id="cv-send" aria-label="发送"><svg viewBox="0 0 24 24"><path d="M20.5 3.5L3.5 10.3l6.8 3.4 3.4 6.8z"/><path d="M20.5 3.5L10.3 13.7"/></svg></button><!-- v360-p：发送键图标换纸飞机 -->
   </div>
   <div id="cv-hbar" class="glass"><!-- v345-p：跳到某天看历史时输入区换成这一条：左边是跳到的日子（点了回日历），右边回到最新 --><button type="button" class="cvh-day" id="cvh-day"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="cvh-t"></span></button><button type="button" class="cvh-go" id="cvh-go">回到最新<svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
   <div id="cv-selbar" class="glass">
@@ -10557,7 +10557,7 @@ function sendBtnState(sending){
   b.classList.toggle('stop',sending);
   b.innerHTML=sending
     ?'<svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/></svg>'
-    :'<svg viewBox="0 0 24 24"><path d="M4 12h13M13 6l6 6-6 6"/></svg>';
+    :'<svg viewBox="0 0 24 24"><path d="M20.5 3.5L3.5 10.3l6.8 3.4 3.4 6.8z"/><path d="M20.5 3.5L10.3 13.7"/></svg>';/* v360-p：发送键图标换纸飞机（停止后换回来也是它） */
 }
 document.getElementById('cv-send').addEventListener('click',()=>{
   const _k=_convKey(_activeCfg);
@@ -14498,7 +14498,7 @@ function _orientApply(){try{
   setTimeout(function(){try{if(window.IBNative&&window.IBNative.available){var _bg=$('pres-bg');var _row=_bg&&_bg.closest('.tog');if(_row)_row.style.display=''}}catch(e){}},1200);/* v116-p：壳内显露「后台 Presence（系统级）」开关（桥在文末激活，故延时探测；浏览器 / PWA 保持隐藏） */
 })();
 function _vidQNormM(v){v=String(v==null?'m':v);if(v==='384')return 'l';if(v==='768')return 'h';if(v==='512')return 'm';return (v==='l'||v==='h')?v:'m'}/* 画质档位兼容电脑端备份里的 384/512/768 写法 */
-var IB_VER='v359-p',IB_VER_DATE='2026-10-19';
+var IB_VER='v360-p',IB_VER_DATE='2026-10-19';
 (function _appVerDraw(){var e=document.getElementById('app-ver');if(e)e.textContent='InternalBeyond Mobile '+IB_VER+'（'+IB_VER_DATE+'）'})();
 function _ibVeilHeal(){try{setTimeout(function(){try{var v=document.getElementById('lk-preveil');if(!v||v.classList.contains('off'))return;var lk=document.getElementById('lockscr');if(lk){_lkVeilOff();return}if(localStorage.getItem('ib_lockOn')==='1')return;_lkVeilOff()}catch(e){}},1600)}catch(e){}}/* v246-p：启动完成后仍盖幕的静默自愈 */
 function _lkVeilOff(){try{window._ibVeilOff=true;var v=document.getElementById('lk-preveil');if(v){v.classList.add('off');setTimeout(function(){try{v.remove()}catch(e){}},420)}}catch(e){}}/* fix-r4：预遮罩揭幕（任务 8） */
@@ -26581,7 +26581,7 @@ html body #conv .cv-input #cv-plus:active,html body #conv .cv-input #cv-kao:acti
 html body #conv .cv-input #cv-ta{border-color:transparent!important;background:transparent!important;box-shadow:none!important;border-radius:0;padding:calc(8px*var(--szCvi,1)) calc(4px*var(--szCvi,1))}
 .cv-input:focus-within{border-color:rgba(var(--b1),.42)}
 .cv-input[data-mode=mic] #cv-send,.cv-input[data-mode=rec] #cv-send,.cv-input[data-mode=send] #cv-mic,.cv-input[data-mode=stop] #cv-mic{display:none}
-html body #conv .cv-input[data-mode=send] #cv-send{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff}
+html body #conv .cv-input #cv-send:not(.stop){color:var(--tx2)}.cv-input #cv-send svg{width:calc(18px*var(--szCvi,1));height:calc(18px*var(--szCvi,1));stroke-width:1.6}
 
 body.vzn-low .sb-desk>[data-dk="notes"]{align-self:start}
 body.vzn-low .wgt.notes-wgt{padding:10px 11px 11px}
