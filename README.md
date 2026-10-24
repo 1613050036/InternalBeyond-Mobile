@@ -5,7 +5,7 @@
   <img alt="InternalBeyond-Mobile — 边界之外" src="assets/readme/banner-light.svg" width="100%">
 </picture>
 
-<p><b>Internal Beyond 的移动端同源版本</b><br><sub>IB-Mobile · IB机 · 一个 HTML 文件，装进浏览器就是一个世界</sub></p>
+<p><b>Internal Beyond 的移动端同源版本</b><br><sub>IB-Mobile · IB机 · 旨于维系情感的连续性而生。</sub></p>
 
 <p>
 <img alt="PWA" src="https://img.shields.io/badge/PWA-%E5%8F%AF%E5%AE%89%E8%A3%85%E6%88%90%20App-7ea6d8?style=flat-square&labelColor=1d2c44">
